@@ -1,0 +1,63 @@
+# yarn add react-router-dom
+#yarn add react-router
+
+
+1.history
+
+import { createBrowserHistory as history} from 'history';
+
+export default history();
+
+
+
+2.Routes
+
+
+import React, { Component } from "react";
+import { Router, Switch, Route } from "react-router-dom";
+import About from "../Page/About"
+import App from "../App";
+import history from './history';
+export default class Routes extends Component {
+    render() {
+        return (
+            <Router history={history}>
+                <Switch>
+                    <Route path="/" exact component={App} />
+                    <Route path="/About" component={About} />
+                    
+
+                </Switch>
+            </Router>
+        )
+    }
+}
+
+
+3. Routes file connect indexjs file
+
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import './index.css';
+import App from './App';
+
+import * as serviceWorker from './serviceWorker';
+import Routes from "./routes/routes";
+
+
+ReactDOM.render(
+    <Router>
+        <React.StrictMode>
+            <Routes />
+        </React.StrictMode>
+    </Router>,
+    document.getElementById('root')
+);
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
