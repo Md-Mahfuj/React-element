@@ -1,0 +1,24 @@
+import React, {Component} from "react";
+import ReactDM from "react-dom"
+
+class Dom extends Component{
+
+    changeImage(){
+        var imgId=document.getElementById("imgId")
+        ReactDM.findDOMNode(imgId).src="https://scontent.fdac25-1.fna.fbcdn.net/v/t1.0-9/19366319_132445607333727_5825200312242188149_n.jpg?_nc_cat=108&_nc_sid=05277f&_nc_ohc=FQcxIZUtz7kAX_M2LtU&_nc_ht=scontent.fdac25-1.fna&oh=65d2c16584348c97742474f45e7bf8e9&oe=5ECC13D6"
+
+
+    }
+    render() {
+        return(
+             <div>
+
+                 <button onClick={this.changeImage}>change chliked</button><br/>
+                 <img  id={"imgId"}
+                     src={"https://scontent.fdac25-1.fna.fbcdn.net/v/t1.0-9/92953745_644770429434573_2964837107207503872_n.jpg?_nc_cat=108&_nc_sid=dd9801&_nc_ohc=cwCoMqDdTngAX9xNIrB&_nc_ht=scontent.fdac25-1.fna&oh=d4533e6ff283dbcaf6fc602378772b73&oe=5ECCC2F8"}/>
+             </div>
+
+        );
+    }
+
+}
